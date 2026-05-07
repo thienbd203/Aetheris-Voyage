@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Instrument Serif", serif;
+  --font-sans: "Barlow", sans-serif;
+
+  --color-surface: #141313;
+  --color-on-surface-variant: #c4c7c8;
+
+  --radius-xl: 2rem;
+  --radius-2xl: 3rem;
+
+  --spacing-margin-edge: 64px;
+  --spacing-section-gap: 160px;
+  --spacing-container-max: 1440px;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased selection:bg-white selection:text-black;
+    font-family: var(--font-sans);
+  }
+}
+
+@layer components {
+  .liquid-glass {
+    @apply backdrop-blur-xl bg-white/3 border border-white/10;
+  }
+
+  .liquid-glass-strong {
+    @apply backdrop-blur-2xl bg-white/8 border border-white/25 border-t-white/40 border-b-white/5 shadow-2xl;
+  }
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
